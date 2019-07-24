@@ -1,0 +1,37 @@
+/* pages/results/results.wxss */
+.page {
+  padding: 20rpx;
+}
+.page-head {
+  text-align: center;
+}
+.page-title {
+
+}
+.page-score {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top:40rpx;
+  padding-bottom:40rpx;
+}
+.score-num {
+  font-size:100rpx;
+}
+.page-footer {
+  margin-top:60rpx;
+  text-align: center;
+}
+.wrong-btns {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top: 60rpx;
+}
+.wrong-btn {
+  margin-left:20rpx;
+  margin-right:20rpx;
+  height:70rpx;
+  line-height:70rpx;
+  font-size:14px;
+}

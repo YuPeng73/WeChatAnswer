@@ -1,0 +1,37 @@
+<!--pages/test/test.wxml-->
+<view class="page">
+  <!--标题-->
+  <view class='page__hd'>
+    <view class="page__title">
+      {{index+1}}、{{questionList[shuffleIndex[index]].question}}
+      {{questionList[shuffleIndex[index]].type==1||questionList[shuffleIndex[index]].type==3?"【单选】":"【多选】"}}
+      （{{questionList[shuffleIndex[index]].scores}}分）
+    </view>
+  </view>
+  <!--内容-->
+  <view class="page__bd">
+    <radio-group class="radio-group" bindchange="radioChange" wx:if="{{questionList[shuffleIndex[index]].type == 1}}">
+      <label class="radio my-choosebox" wx:for="{{questionList[shuffleIndex[index]].option}}" wx:for-index="key"  wx:for-item="value">
+        <radio value="{{key}}" checked="{{questionList[shuffleIndex[index]].checked}}"/>{{key}}、{{value}}
+      </label>
+    </radio-group>
+    <checkbox-group bindchange="checkboxChange" wx:elif="{{questionList[shuffleIndex[index]].type == 2}}">
+      <label class="checkbox my-choosebox" wx:for="{{questionList[shuffleIndex[index]].option}}" wx:for-index="key"  wx:for-item="value">
+        <checkbox value="{{key}}" checked="{{questionList[shuffleIndex[index]].checked}}"/>{{key}}、{{value}}
+      </label>
+    </checkbox-group>
+    <radio-group class="radio-group" bindchange="radioChange" wx:else>
+      <label class="radio my-choosebox" wx:for="{{questionList[shuffleIndex[index]].option}}">
+        <radio value="{{item}}" checked="{{questionList[shuffleIndex[index]].checked}}"/>{{item}}
+      </label>
+    </radio-group>
+  </view>
+  <!--按钮-->
+  <view class='page_ft'>
+    <view class='mybutton'>
+      <button bindtap='nextSubmit' wx:if="{{index == questionList.length-1}}">提交</button>
+      <button bindtap='nextSubmit' wx:else>下一题</button>
+      <text bindtap='outTest' class="toindex-btn">退出答题</text>
+    </view>
+  </view>
+</view>

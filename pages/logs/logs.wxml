@@ -1,0 +1,21 @@
+<!--logs.wxml-->
+<view class="page">
+  <view class="table" wx:if="{{logs.length>0}}">
+    <view class="tr bg-w">
+      <view class="th first">时间</view>
+      <view class="th">试题</view>
+      <view class="th ">得分</view>
+    </view>
+    <block wx:for="{{logs}}" wx:for-item="item">
+      <view class="tr">
+        <view class="td first">{{item.date}}</view>
+        <view class="td">{{item.testId}}</view>
+        <view class="td">{{item.score}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="no-record" wx:else>
+    <image src="/image/wechat.png" class="no-image"></image>
+    <text class="no-text">没有数据哦~</text>
+  </view>
+</view>

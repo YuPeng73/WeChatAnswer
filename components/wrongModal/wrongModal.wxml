@@ -1,0 +1,46 @@
+<!--components/wrongModal/wrongModal.wxml-->
+<view class="modal-page" wx:if="{{modalShow}}">
+  <view class="modal-mask" bindtap="closeModal"></view>
+  <!-- 内容 -->
+  <view class="modal-content">
+    <view class="modal-title">
+      题目: {{questionList[wrongList[index]].question}} 
+      {{questionList[wrongList[index]].type==1||questionList[wrongList[index]].type==3?"【单选】":"【多选】"}}
+      （{{questionList[shuffleIndex[index]].scores}}分）
+    </view>
+    <view class="modal-body">
+      <radio-group class="radio-group" bindchange="radioChange" wx:if="{{questionList[wrongList[index]].type == 1}}">
+        <label class="radio my-choosebox" wx:for="{{questionList[wrongList[index]].option}}" wx:for-index="key"  wx:for-item="value">
+          <radio disabled="{{true}}" value="{{key}}" checked="{{questionList[wrongList[index]].checked}}"/>{{key}}、{{value}}
+        </label>
+      </radio-group>
+      <checkbox-group bindchange="checkboxChange" wx:elif="{{questionList[shuffleIndex[index]].type == 2}}">
+        <label class="checkbox my-choosebox" wx:for="{{questionList[wrongList[index]].option}}" wx:for-index="key"  wx:for-item="value">
+          <checkbox disabled="{{true}}" value="{{key}}" checked="{{questionList[wrongList[index]].checked}}"/>{{key}}、{{value}}
+        </label>
+      </checkbox-group>
+      <radio-group class="radio-group" bindchange="radioChange" wx:else>
+        <label class="radio my-choosebox" wx:for="{{questionList[wrongList[index]].option}}">
+          <radio disabled="{{true}}" value="{{item}}" checked="{{questionList[wrongList[index]].checked}}"/>{{item}}
+        </label>
+      </radio-group>
+    </view>
+    <!-- 答案解析 -->
+    <view class="modal-answer">
+      <text class="answer-text wrong-answer">
+        您的答案为 {{chooseValue[wrongListSort[index]]}}
+      </text>
+      <text class="answer-text true-answer">
+        正确答案为 {{questionList[wrongList[index]]['true']}}
+      </text>
+    </view>
+    <!-- 操作按钮 -->
+    <view class="modal-button">
+      <view wx:if="{{index == wrongList.length-1}}" class="modal-btns">
+        <button bindtap='again' class="modal-btn">再来一次</button>
+        <button bindtap='toIndex' class="modal-btn">返回首页</button>
+      </view>
+      <button bindtap='next' wx:else class="modal-btn">下一题</button>
+    </view>
+  </view>
+</view>

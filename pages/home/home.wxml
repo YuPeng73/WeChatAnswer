@@ -1,0 +1,12 @@
+<!--pages/home/home.wxml-->
+<view class="page">
+  <view class="page-title">请选择试题：</view>
+  <view class="flex-box">
+    <view class="flex-item"><view class="item bc_green" bindtap="toTestPage" data-testId="101-1">101-1</view></view>
+    <view class="flex-item"><view class="item bc_red" bindtap="toTestPage" data-testId="101-2">101-2</view></view>
+    <view class="flex-item"><view class="item bc_yellow" bindtap="toTestPage" data-testId="102">102</view></view>
+    <view class="flex-item"><view class="item bc_blue" bindtap="toTestPage" data-testId="104">104</view></view>
+    <view class="flex-item item-last"><view class="item bc_green" bindtap="toTestPage" data-testId="301-302">301-302</view></view>
+    <!-- <view class="flex-item"><view class="item bc_green">302</view></view> -->
+  </view>
+</view>

@@ -1,0 +1,21 @@
+/* pages/test/test.wxss */
+.page {
+  padding: 20rpx;
+}
+.page__bd {
+  padding: 20rpx;
+}
+.my-choosebox {
+  display: block;
+  margin-bottom: 20rpx;
+}
+.toindex-btn {
+  margin-top: 20rpx;
+  display:inline-block;
+  line-height:2.3;
+  font-size:13px;
+  padding:0 1.34em;
+  color:#576b95;
+  text-decoration:underline;
+  float: right;
+}

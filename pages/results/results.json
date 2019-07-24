@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "WeChatTest",
+  "usingComponents": {
+    "wrong-modal":"/components/wrongModal/wrongModal"
+  }
+}

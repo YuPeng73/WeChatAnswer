@@ -1,0 +1,32 @@
+/* pages/home/home.wxss */
+.page-title {
+  padding-top: 20rpx;
+  padding-left: 40rpx;
+  font-size: 16px;
+}
+.flex-box {
+  display: flex;
+  align-items:center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20rpx;
+  box-sizing:border-box;
+}
+.flex-item {
+  width: 50%;
+  height: 200rpx;
+  padding: 20rpx;
+  box-sizing:border-box;
+}
+.item {
+  width:100%;
+  height:100%;
+  border-radius:8rpx;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  color: #fff;
+}
+.item-last {
+  flex: 1;
+}
