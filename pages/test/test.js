@@ -75,7 +75,7 @@ Page({
   */
   nextSubmit: function(){
     // 如果没有选择
-    if (!this.data.chooseValue[this.data.index]) {  
+    if (this.data.chooseValue[this.data.index] == undefined || this.data.chooseValue[this.data.index].length == 0) {  
       wx.showToast({
         title: '请选择至少一个答案!',
         icon: 'none',
@@ -105,10 +105,6 @@ Page({
       })
 
       // 设置缓存
-      // var logs = wx.getStorageSync('logs') || []
-      // logs.unshift(Date.now())
-      // wx.setStorageSync('logs', logs)
-
       var logs = wx.getStorageSync('logs') || []
       let logsList = { "date": Date.now(), "testId": this.data.testId, "score": this.data.totalScore }
       logs.unshift(logsList);
